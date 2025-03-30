@@ -1,0 +1,143 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.gallery{
+    display: grid;
+    grid-template-areas: "gallery__img-1"
+                         "gallery__img-1"
+                         "gallery__img-2"
+                         "gallery__content";
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include mix.breakpoint(tablet){
+        display: grid;
+        grid-template-areas: "it1 it2"
+                             "it1 it3";
+        grid-template-columns: 1.04fr 0.9fr;
+        gap: 10px;
+        margin-bottom: 40px;
+
+        @include mix.breakpoint(desktop){
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr; // la imagen ajusta su tamaño y el contenido ocupa lo restante
+            align-items: start;
+            gap:30px;
+            margin-bottom: 100px;
+        }
+    }
+
+    &__img-1{
+        grid-area: gallery__img-1;
+        max-width: 100%;
+
+        @include mix.breakpoint(tablet){
+            display: none;
+        }
+
+        @include mix.breakpoint(desktop){
+            display: block;
+            grid-area: it1;
+            width: 100%;
+        }
+
+        &-tablet{
+            display: none;
+
+            @include mix.breakpoint(tablet){
+                display:block;
+                grid-area: it1;
+                max-width: 100%;
+            }
+
+            @include mix.breakpoint(desktop){
+                display: none;
+            }
+            
+        }
+    }
+    &__img-2{
+        grid-area: gallery__img-2;
+        max-width: 100%;
+
+        @include mix.breakpoint(tablet){
+            display: none;
+            
+        }
+        @include mix.breakpoint(desktop){
+            display: block;
+            grid-area: it2;
+            width: 100%;
+        }
+
+        &-tablet{
+            display: none;
+
+            @include mix.breakpoint(tablet){
+                display:block;
+                grid-area: it2;
+                max-width: 100%;
+                height: 100%;
+                @include mix.breakpoint(desktop){
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__content {
+        grid-area: gallery__content;
+        background-color: var.$black;
+        color: var.$white;
+        padding: 40px 20px;
+        width: 100%;
+        height: auto;
+        align-self: stretch;
+        
+        @include mix.breakpoint(tablet) {
+            grid-area: it3;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @include mix.breakpoint(desktop){
+           width: 100%;
+           padding-left: 40px;
+        }
+        
+        &-title {
+            font-family: var.$font-title;
+            font-size: 50px;
+            margin-top: 0;
+            margin-bottom: 20px;
+
+            @include mix.breakpoint(tablet) {
+                max-width: 90%;
+            }
+
+            @include mix.breakpoint(desktop){
+                font-size: 60px;
+            }
+        }
+        
+        &-subtitle {
+            font-family: var.$font-subtitle;
+            font-size: 18px;
+            line-height: 28px;
+            margin: 0;
+            width: 88%;
+
+            @include mix.breakpoint(tablet) {
+                max-width: 90%;
+            }
+            
+            @include mix.breakpoint(desktop){
+                font-size: 25px;
+                max-width: 90%;
+                line-height: 35px;
+            }
+        }
+    }
+}

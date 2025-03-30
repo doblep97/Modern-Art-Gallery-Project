@@ -1,0 +1,17 @@
+//En este archivo pondremos los valores por defecto que queramos que tenga el proyecto
+
+@use '../abstracts/variables' as var;
+
+//Tamaño de fuente y tipografia por defecto en el proyecto
+
+html * { 
+   
+    font-size: 16px;
+    overflow-x: hidden;
+}
+ 
+body {
+    overflow-x: hidden;
+    margin: 0;
+} 
+

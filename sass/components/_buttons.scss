@@ -1,0 +1,55 @@
+@use '../abstracts/mixins' as mix;
+@use '../abstracts/variables' as var;
+
+
+.button {
+    display: flex;
+    align-items: stretch; // Para que los hijos ocupen toda la altura del padre
+    text-decoration: none;
+    color: var.$white;
+    width: 70%;
+
+    &-text {
+        background-color: var.$black;
+        padding: 20px;
+        font-family: var.$font-title;
+        letter-spacing: 3.5px;
+        width: 80%;
+        text-align: center;
+        margin:0;
+    }
+
+    &-icon {
+        background-color: var.$brown;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+    }
+
+    &:hover{
+
+        .button-text {
+            background-color: var.$brown;
+        }
+
+        .button-icon {
+            background-color: var.$black;
+        }
+    }
+
+    &_location{
+        
+        @include mix.breakpoint(tablet) {
+            position: absolute;
+            width: 30%;
+            top: 0;
+            left: 50px;
+
+            @include mix.breakpoint(desktop) {
+                width: 20%;
+            }
+        } 
+    }
+}

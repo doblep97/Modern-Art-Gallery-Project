@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as mix;
+
+//Me aseguro que todo elemento que tenga la clase container tenga un espacio de seguradidad de 16px
+
+.container{
+    padding-left: 16px;
+    padding-right: 16px;
+    
+    @include mix.breakpoint(tablet){
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include mix.breakpoint(tablethorizontal){
+        padding-left: 30px;
+        padding-right:30px;
+    }
+    
+    @include mix.breakpoint(desktop){
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    @include mix.breakpoint(desktop){
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}

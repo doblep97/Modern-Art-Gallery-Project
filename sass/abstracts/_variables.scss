@@ -1,0 +1,22 @@
+@use '../base/typography' as font;
+
+//Medidas responsive
+
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1440px;
+
+//Fuentes
+$font-title:font.$big_shoulders;
+$font-subtitle:font.$outfit;
+
+
+//Colores
+
+$brown:#D5966C;
+$black:#151515;
+$grey:#444444;
+$white:#ffffff;
+
+

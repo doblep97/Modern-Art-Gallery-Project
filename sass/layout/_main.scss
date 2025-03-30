@@ -1,0 +1,5 @@
+@use '../abstracts/variables' as var;
+
+.main__location{
+    background-color: var.$black;
+}

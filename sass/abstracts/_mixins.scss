@@ -1,0 +1,56 @@
+@use '../abstracts/variables' as var;
+
+@mixin breakpoint($bp) {
+  
+  @if $bp == tablet {
+    @media (min-width: var.$bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == tablethorizontal {
+    @media (min-width: var.$bp-tablet-horizontal) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: var.$bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl {
+    @media (min-width: var.$bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin reset_list(){
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+//Entran dos valores, dependiendo el boton tendran un color de fondo y de letra
+
+@mixin button(){
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+
+}
+
+@mixin button--pink-orange(){
+  @include button();
+  padding: 15px 38px;
+  background-image: var.$gradient-orange;
+
+}
+
+@mixin button--pink-blue(){
+  @include button();
+  background-image: var.$gradient-blue;
+}

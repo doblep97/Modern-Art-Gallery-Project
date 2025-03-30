@@ -1,0 +1,131 @@
+@use '../abstracts/mixins' as mix;
+@use '../components/buttons' as *;
+@use '../abstracts/variables' as var;
+
+.header__principal{
+    margin-bottom: 80px;
+
+    @include mix.breakpoint(tablet){
+        background-image: url('../../img/imagen-tablet.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-height: 700px;
+        position: relative;
+
+        @include mix.breakpoint(desktop){
+            background-image: none;
+            position: relative;
+            background: linear-gradient(90deg, rgba(21,21,21,1) 0%, rgba(21,21,21,1) 42%, rgba(255,255,255,1) 42%, rgba(255,255,255,1) 100%);
+            overflow: hidden;
+            
+        }
+    }
+
+    &-img{
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        @include mix.breakpoint(tablet){
+            display: none;
+            min-width: 400px;
+        }
+        &-desktop{
+            display: none;
+
+            @include mix.breakpoint(desktop){
+                display: block;
+                max-width: 450px;
+                max-height: 800px;
+                position: absolute;
+                left:380px
+            }
+        }   
+    }
+
+    &-icon{
+
+        &-black{
+            margin-bottom: 10px;
+
+            @include mix.breakpoint(desktop){
+                display: none;
+            }
+        }
+
+        &-white{
+            display: none;
+
+            @include mix.breakpoint(tablet){
+                display: none;
+            }
+
+            @include mix.breakpoint(desktop){
+                display: block;
+                width: 380px;
+            }
+        }
+    }
+
+    &-text{
+        font-family:var.$font-subtitle;
+        font-size: 18px;
+        margin-bottom: 30px;
+
+        @include mix.breakpoint(desktop){
+            margin-bottom: 80px;
+        }
+    }
+
+    &-content{
+
+        @include mix.breakpoint(tablet){
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            line-height: 28px;
+            width: 45%;
+            position: absolute;
+            right: 36px;
+            top:180px;
+        }
+
+        @include mix.breakpoint(desktop){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            gap: 50px;
+            margin-right: 90px;
+        }
+
+        &-desktop{
+
+            @include mix.breakpoint(desktop){
+                width: 35%;
+            }
+        }
+    }
+}
+
+.header__location{
+    height:550px;
+    background-image: url("../../img/imagen-mapa-mobile.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    @include mix.breakpoint(tablet) {
+        height:590px;
+        background-image: url("../../img/imagen-mapa-tablet.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    
+    @include mix.breakpoint(desktop) {
+        height:500px;
+        background-image: url("../../img/imagen-mapa-desktop.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+}

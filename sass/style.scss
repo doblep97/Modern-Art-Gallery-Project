@@ -1,0 +1,14 @@
+//Dentro del style pondremos todo lo que queremos abarcar de estilos en los archivos donde lo estamos configurando
+
+@use './abstracts/variables' as *;
+@use './layout/header' as *;
+@use './themes/default' as *;
+@use './layout/container' as *;
+@use './components/buttons' as *;
+@use './layout/hero' as *;
+@use './layout/footer' as *;
+@use './layout/main' as *;
+@use './layout/body' as *;
+@use './layout/gallery' as *;
+
+
